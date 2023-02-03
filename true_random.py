@@ -48,7 +48,7 @@ def __get_headers_and_payload():
     return (headers, payload)
 
 
-def get_random_number(low: int = 1, high: int = 100):
+def get_random_number(low: int = 1, high: int = 100) -> int:
     '''Get a random integer number between low and high.'''
     api_key = __load_api_key(USER_FILE)
     headers, payload = __get_headers_and_payload()
@@ -65,7 +65,7 @@ def get_random_number(low: int = 1, high: int = 100):
         raise Exception(resp.status_code)
 
 
-def get_random_day():
+def get_random_day() -> int:
     '''Get a random number between 1 and 31'''
     return get_random_number(high=31)
 
